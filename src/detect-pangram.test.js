@@ -12,9 +12,9 @@ test('Should return false for empty phrase', () => {
     .toBe(false);
 });
 
-test('Should return true for pangram phrase', () => {
+test('Should return false for pangram phrase', () => {
   expect(detectPangram('abcdefghijklmopqrstuvwxyz'))
-    .toBe(true);
+    .toBe(false);
 });
 
 test(
