@@ -15,6 +15,20 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const phraseCaseSwaped = phrase.toUpperCase();
+  let index = 0;
+  let result = false;
+  while (index < alphabet.length) {
+    if (phraseCaseSwaped.includes(alphabet[index])) {
+      result = true;
+      index++;
+    } else {
+      result = false;
+      return result;
+    }
+  }
+  return result;
   // write code here
 }
 
