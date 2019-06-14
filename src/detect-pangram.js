@@ -27,6 +27,8 @@ function detectPangram(phrase) {
   for (let i = 0; i < alphabet.length; i++) {
     if (phraseInLowerCase.includes(alphabet[i])) {
       mutchCounter++;
+    } else {
+      return isPhrasePangram;
     }
   }
 
