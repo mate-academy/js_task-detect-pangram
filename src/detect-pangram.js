@@ -16,6 +16,13 @@
  */
 function detectPangram(phrase) {
   // write code here
+  const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
+
+  const onlyLetters = [...phrase]
+    .filter(item => (item >= 'A' && item <= 'z'))
+    .map(letters => letters.toLowerCase());
+
+  return alphabet.every(item => onlyLetters.includes(item));
 }
 
 module.exports = detectPangram;
