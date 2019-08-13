@@ -26,7 +26,7 @@ function detectPangram(phrase) {
     }
   }
 
-  if (counter === phrase.length) {
+  if (counter === symbolsUTF.length) {
     return true;
   }
   return false;
