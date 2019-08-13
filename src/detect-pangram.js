@@ -15,7 +15,7 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  return new Set(phrase.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
 }
 
 module.exports = detectPangram;
