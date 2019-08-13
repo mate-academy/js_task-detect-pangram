@@ -26,7 +26,7 @@ function detectPangram(phrase) {
     }
   }
 
-  if (counter === 26) {
+  if (counter === phrase.length) {
     return true;
   }
   return false;
