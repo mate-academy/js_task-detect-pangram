@@ -19,7 +19,7 @@ function detectPangram(phrase) {
   const pattern = /[^A-z]/;
 
   for (const letter of phrase) {
-    if (ignoreSymbols.test(letter)) {
+    if (pattern.test(letter)) {
       continue;
     }
     counterLetters[letter.toLowerCase()] = true;
