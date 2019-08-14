@@ -15,7 +15,19 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
-}
+  const filterPhrase = [];
 
+  phrase
+    .toLowerCase()
+    .replace(/[ ]/g, '')
+    .replace(/[^a-zA-Z]/g, '')
+    .split('')
+    .forEach(word => {
+      if (filterPhrase.includes(word) === false) {
+        filterPhrase.push(word);
+      }
+    });
+
+  return filterPhrase.join('').length === 26;
+}
 module.exports = detectPangram;
