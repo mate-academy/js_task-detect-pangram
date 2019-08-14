@@ -20,7 +20,7 @@ function detectPangram(phrase) {
   const lowerCasePhrase = phrase.toLowerCase();
 
   for (let i = 0; i < alphabet.length; i++) {
-    if ((lowerCasePhrase.indexOf(alphabet[i])) !== -1) {
+    if (lowerCasePhrase.includes(alphabet[i])) {
       counter++;
     }
   }
