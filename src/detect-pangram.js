@@ -15,7 +15,17 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const counterLetters = {};
+  const ignoreSymbols = /[^A-z]/;
+
+  for (const letter of phrase) {
+    if (ignoreSymbols.test(letter)) {
+      continue;
+    }
+    counterLetters[letter.toLowerCase()] = true;
+  }
+
+  return Object.keys(counterLetters).length === 26;
 }
 
 module.exports = detectPangram;
