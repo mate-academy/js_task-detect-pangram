@@ -17,6 +17,11 @@ test('Should return true for pangram phrase', () => {
     .toBe(true);
 });
 
+test('Should return true for pangram phrase', () => {
+  expect(detectPangram('abcdefghijklmnopqrstuvwxyy'))
+    .toBe(false);
+});
+
 test(
   'Should return true for pangram with numbers and punctuation', () => {
     expect(detectPangram('How quickly daft jumping 34 zebras vex?'))
