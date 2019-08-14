@@ -9,13 +9,22 @@
  * (case is irrelevant).
  * Given a string, detect whether or not it is a pangram. Return True if it
  * is, False if not. Ignore numbers and punctuation.
- *
+ *push
  * @param {string} phrase
  *
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const letters = [];
+  const replacePhrase = phrase.replace(/[^a-zA-Z]/g, '').toLowerCase();
+
+  for (let i = 0; i < replacePhrase.length; i++) {
+    if (!letters.includes(replacePhrase[i])) {
+      letters.push(replacePhrase[i]);
+    }
+  }
+
+  return letters.length === 26;
 }
 
 module.exports = detectPangram;
