@@ -15,7 +15,14 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  let unique = '';
+  const sortStr = phrase.replace(/[^A-Za-z]/g, '').toLowerCase().trim();
+  for (let i = 0; i < sortStr.length; i++) {
+    if (unique.indexOf(sortStr[i]) === -1) {
+      unique += sortStr[i];
+    }
+  }
+  return unique.length === 26;
 }
 
 module.exports = detectPangram;
