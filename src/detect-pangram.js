@@ -16,7 +16,7 @@
  */
 function detectPangram(phrase) {
   const counterLetters = {};
-  const ignoreSymbols = /[^A-z]/;
+  const pattern = /[^A-z]/;
 
   for (const letter of phrase) {
     if (ignoreSymbols.test(letter)) {
