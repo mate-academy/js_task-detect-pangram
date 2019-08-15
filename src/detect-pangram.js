@@ -15,7 +15,7 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  return (phrase.toLowerCase().match(/([a-z])(?!.*\1)/g) || []).length === 26;
 }
 
 module.exports = detectPangram;
