@@ -15,7 +15,30 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
-}
+  const arrayedString = phrase.split('');
+  let countingletters = 0;
+  let strNoRepetition = '';
 
+  for (let x = 0; x < arrayedString.length; x++) {
+    let i = 0;
+    for (let y = 0; y < arrayedString.length; y++) {
+      if (arrayedString[x] === arrayedString[y]) {
+        i++;
+      }
+      if (i >= 2) {
+        arrayedString[y] = '';
+        i = 0;
+      }
+    }
+  }
+  strNoRepetition = arrayedString.join('');
+
+  for (let x = 0; x < arrayedString.length; x++) {
+    if (strNoRepetition.charAt(x).match(/[a-zA-Z]/)) {
+      countingletters++;
+    }
+  }
+
+  return countingletters === 26;
+}
 module.exports = detectPangram;
