@@ -15,10 +15,10 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const inPangram = 'abcdefghijklmnopqrstuvwxyz';
-  const phrase2 = phrase.toLowerCase().replace(/[^a-z]/g, '');
-  for (let i = 0; i < inPangram.length; i++) {
-    if (phrase2.indexOf(inPangram[i]) < 0) {
+  const checkString = 'abcdefghijklmnopqrstuvwxyz';
+  const phraseReplace = phrase.toLowerCase().replace(/[^a-z]/g, '');
+  for (let i = 0; i < checkString.length; i++) {
+    if (phraseReplace.indexOf(checkString[i]) < 0) {
       return false;
     };
   };
