@@ -15,7 +15,14 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
+
+  Array.from(phrase)
+    .filter(char => char.match(/[a-zA-Z]/))
+    .map(char => char.toLowerCase())
+    .map(char => alphabet.splice(alphabet.indexOf(char), 1));
+
+  return alphabet.length === 0;
 }
 
 module.exports = detectPangram;
