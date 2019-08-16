@@ -16,6 +16,21 @@
  */
 function detectPangram(phrase) {
   // write code here
+  const phrase1 = phrase.toLowerCase();
+  let count = 0;
+  for (let i = 97; i < 123; i++) {
+    const char = String.fromCharCode(i);
+    for (let j = 0; j < phrase1.length; j++) {
+      if (phrase1[j] === char) {
+        count++;
+        continue;
+      }
+    }
+  }
+  if (count === 26) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
 module.exports = detectPangram;
