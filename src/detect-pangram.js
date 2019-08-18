@@ -15,11 +15,11 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const templatePanagram = 'abcdifghijklmnopqrstuvwxyz';
+  const alphabet = 'abcdifghijklmnopqrstuvwxyz';
   const phraseToLowerCase = phrase.toLowerCase();
 
-  for (const i of templatePanagram) {
-    if (!phraseToLowerCase.includes(i)) {
+  for (const letter of alphabet) {
+    if (!phraseToLowerCase.includes(letter)) {
       return false;
     }
   }
