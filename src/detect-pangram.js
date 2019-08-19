@@ -23,10 +23,9 @@ function detectPangram(phrase) {
     for (let j = 0; j < phrase1.length; j++) {
       if (phrase1[j] === char) {
         count++;
-        continue;
+        return count === 26;
       }
     }
   }
-  return count === 26;
 };
 module.exports = detectPangram;
