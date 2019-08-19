@@ -27,10 +27,6 @@ function detectPangram(phrase) {
       }
     }
   }
-  if (count === 26) {
-    return true;
-  } else {
-    return false;
-  }
-}
+  return count === 26;
+};
 module.exports = detectPangram;
