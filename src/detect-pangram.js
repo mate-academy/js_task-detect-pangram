@@ -15,7 +15,12 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const letters = 'abcdefghijklmnopqrstuvwxyz';
+  // eslint-disable-next-line no-param-reassign
+  phrase = phrase.toLowerCase().replace(/[^a-z]/g, '');
+  // eslint-disable-next-line max-len
+  for (let i = 0; i < 26; i++) { if (phrase.indexOf(letters[i]) < 0) { return false; } }
+  return true;
 }
 
 module.exports = detectPangram;
