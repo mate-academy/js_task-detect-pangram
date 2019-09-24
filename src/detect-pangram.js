@@ -15,7 +15,13 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  let regular = phrase.toUpperCase().match(/[A-Z]/g);
+  if (regular === null) {
+    regular = [];
+  }
+  return (regular.sort()
+    .filter((char, index, arr) => (arr[index] !== arr[index - 1]))
+    .length === 26);
 }
 
 module.exports = detectPangram;
