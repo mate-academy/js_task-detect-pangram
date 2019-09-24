@@ -15,9 +15,9 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-    'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  const result = alphabet.map(x => phrase.includes(x));
+  const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+    'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const result = alphabet.map(x => phrase.toUpperCase().includes(x));
   return !result.includes(false);
 }
 
