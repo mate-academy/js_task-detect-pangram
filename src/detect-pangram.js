@@ -15,7 +15,18 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const alphabetArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+    'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+    's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+  for (let i = 0; i < alphabetArr.length; i++) {
+    const letterFind = new RegExp(alphabetArr[i], 'gi');
+    if (!phrase.match(letterFind)) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
