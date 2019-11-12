@@ -15,14 +15,18 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-    'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   const phraseNormalized = phrase.toLowerCase();
+  let letter = 'a';
 
-  for (let i = 0; i < letters.length; i++) {
-    if (!phraseNormalized.includes(letters[i])) {
+  function nextChar(c) {
+    return String.fromCharCode(c.charCodeAt(0) + 1);
+  }
+
+  for (let i = 1; i <= 26; i++) {
+    if (!phraseNormalized.includes(letter)) {
       return false;
     }
+    letter = nextChar(letter);
   }
 
   return true;
