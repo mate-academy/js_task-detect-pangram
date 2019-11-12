@@ -15,12 +15,12 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const string = phrase.toLowerCase();
+  const phraseLowerCase = phrase.toLowerCase();
   let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  for (let i = 0; i < string.length; i++) {
-    const index = alphabet.indexOf(string[i]);
-    if (string[i] === alphabet[index]) {
-      alphabet = alphabet.replace(string[i], '');
+  for (let i = 0; i < phraseLowerCase.length; i++) {
+    const index = alphabet.indexOf(phraseLowerCase[i]);
+    if (phraseLowerCase[i] === alphabet[index]) {
+      alphabet = alphabet.replace(phraseLowerCase[i], '');
     }
   }
   return alphabet.length === 0;
