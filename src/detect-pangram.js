@@ -15,7 +15,17 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+    'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  const phraseNormalized = phrase.toLowerCase();
+
+  for (let i = 0; i < letters.length; i++) {
+    if (!phraseNormalized.includes(letters[i])) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
