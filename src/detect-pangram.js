@@ -15,7 +15,17 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const filteredLetters = phrase
+    .toLowerCase()
+    .split('')
+    .filter((item) => item.toLowerCase() !== item.toUpperCase());
+  const uniqueLetters = new Set(filteredLetters).size;
+
+  if (uniqueLetters === 26) {
+    return true;
+  }
+
+  return false;
 }
 
 module.exports = detectPangram;
