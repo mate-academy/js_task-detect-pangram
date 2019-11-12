@@ -15,7 +15,19 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const englishLetters = 26;
+
+  const phraseToArrayWithoutSpaceToLowerCasefromAToZ
+  = phrase.replace(/\s/g, '').toLowerCase().split('').sort();
+  const arr = phraseToArrayWithoutSpaceToLowerCasefromAToZ;
+
+  for (let k = 0; k < arr.length; k++) {
+    if (arr[k] === arr[k + 1]) {
+      delete arr[k];
+    }
+  }
+
+  return (arr.sort().slice(0, englishLetters).length === englishLetters);
 }
 
 module.exports = detectPangram;
