@@ -15,7 +15,15 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const phraseNormalize = phrase.toLowerCase();
+
+  for (let i = 0; i < alphabet.length; i++) {
+    if (phraseNormalize.indexOf(alphabet[i]) === -1) {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = detectPangram;
