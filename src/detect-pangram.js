@@ -15,7 +15,13 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  let matches = '';
+  new Set(phrase).forEach(letter => {
+    if (letter.match(/[a-z]/i)) {
+      matches += letter;
+    }
+  });
+  return (matches.length === 26);
 }
 
 module.exports = detectPangram;
