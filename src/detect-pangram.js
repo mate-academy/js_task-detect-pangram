@@ -15,7 +15,16 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const res = new Set();
+
+  phrase.toLowerCase()
+    .replace(/[0-9 ,.!?@#$%^&*()-=+_]/gi, '')
+    .split('')
+    .map(item => {
+      res.add(item);
+    });
+
+  return res.size === 26;
 }
 
 module.exports = detectPangram;
