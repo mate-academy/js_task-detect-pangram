@@ -16,7 +16,6 @@
  */
 
 function detectPangram(phrase) {
-  let result;
   const set = new Set();
 
   for (const letter of phrase) {
@@ -25,9 +24,7 @@ function detectPangram(phrase) {
     }
   }
 
-  set.size === 26 ? result = true : result = false;
-
-  return result;
+  return set.size === 26;
 }
 
 module.exports = detectPangram;
