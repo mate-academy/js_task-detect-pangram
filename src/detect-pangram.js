@@ -17,10 +17,14 @@
 function detectPangram(phrase) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   let letterCount = 26;
+  let letters = [];
+
+  letters = alphabet.split('');
 
   for (let i = 0; i < alphabet.length; i++) {
     for (let j = 0; j < phrase.length; j++) {
-      if (phrase.toLowerCase().charAt(j) === alphabet.charAt(i)) {
+      if (phrase.toLowerCase().charAt(j) === letters[i] && letters[i] !== ' ') {
+        letters.splice(i, 1, ' ');
         letterCount--;
       }
     }
