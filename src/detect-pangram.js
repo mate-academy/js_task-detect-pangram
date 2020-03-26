@@ -18,7 +18,7 @@ function detectPangram(phrase) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';// write code here
 
   // eslint-disable-next-line max-len
-  const string = phrase.replace(/[^A-Za-z]/g, '').toLowerCase().split('').sort().join('');
+  const string = phrase.replace(/[^A-Za-z]/g, '').toLowerCase();
   let x = 1;
 
   for (const letter of alphabet) {
