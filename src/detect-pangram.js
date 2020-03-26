@@ -15,7 +15,11 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  return [...new Set(phrase.toLowerCase()
+    .split(' ')
+    .join('')
+    .replace(/[^a-z]/g, '')
+    .split(''))].length === 26;
 }
 
 module.exports = detectPangram;
