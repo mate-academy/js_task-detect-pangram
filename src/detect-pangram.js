@@ -26,15 +26,18 @@ function detectPangram(phrase) {
       if (phrase.toLowerCase().charAt(j) === letters[i] && letters[i] !== ' ') {
         letters.splice(i, 1, ' ');
         letterCount--;
+        break;
       }
+    }
+
+    if (letters[i] !== ' ') {
+      return false;
     }
 
     if (letterCount === 0) {
       return true;
     }
   }
-
-  return false;
 }
 
 module.exports = detectPangram;
