@@ -15,7 +15,24 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';// write code here
+
+  // eslint-disable-next-line max-len
+  const string = phrase.replace(/[^A-Za-z]/g, '').toLowerCase().split('').sort().join('');
+  let x = 1;
+
+  for (const letter of alphabet) {
+    if (string.includes(letter) === false) {
+      x = 0;
+      break;
+    }
+  }
+
+  if (x === 1) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = detectPangram;
