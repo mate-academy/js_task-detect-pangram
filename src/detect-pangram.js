@@ -17,12 +17,13 @@
 function detectPangram(phrase) {
   // write code here
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
-  let b = false;
-  alphabet.split("").map(letter => {
-    phrase.toLowerCase().includes(letter) ? letter : b = true;
-    return letter;
-  });
-  return b === false;
+  let b = true;
+  for (let i = 0; i < alphabet.length; i++) {
+    if (!phrase.toLowerCase().includes(alphabet[i])) {
+      b = false;
+    }
+  }
+  return b;
 }
 
 module.exports = detectPangram;
