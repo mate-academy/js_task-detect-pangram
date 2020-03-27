@@ -16,6 +16,19 @@
  */
 function detectPangram(phrase) {
   // write code here
+  if (phrase.length < 26) {
+    return false;
+  }
+
+  const phraseUpCase = phrase.toUpperCase();
+
+  for (let cartCode = 90; cartCode >= 65; cartCode--) {
+    if (!phraseUpCase.includes(String.fromCharCode(cartCode))) {
+      return false;
+    };
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
