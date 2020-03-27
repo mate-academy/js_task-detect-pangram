@@ -16,6 +16,24 @@
  */
 function detectPangram(phrase) {
   // write code here
+  const numberOfLetters = 26;
+
+  if (phrase.length < numberOfLetters) {
+    return false;
+  }
+
+  const alfabet
+  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  const phraseUpCase = phrase.toUpperCase();
+
+  for (let i = 0; i < numberOfLetters; i++) {
+    if (!phraseUpCase.includes(alfabet[i])) {
+      return false;
+    };
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
