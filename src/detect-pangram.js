@@ -15,7 +15,15 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const str = 'zxcvbnmasdfghjklqwertyuiop';
+
+  for (let i = 0; i < str.length; i++) {
+    if (!phrase.includes(str[i]) && !phrase.includes(str[i].toUpperCase())) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
