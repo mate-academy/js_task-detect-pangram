@@ -39,7 +39,7 @@
 function detectPangram(phrase) {
   return 'abcdefghijklmnopqrstuvwxyz'
     .split('')
-    .every((elem) => phrase.toLowerCase().includes(elem)) || false;
+    .every((elem) => phrase.toLowerCase().includes(elem));
 }
 
 module.exports = detectPangram;
