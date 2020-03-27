@@ -14,8 +14,32 @@
  *
  * @return {boolean}
  */
+
+// First solution with Set
+/* function detectPangram(phrase) {
+  if (phrase === '') {
+
+    return false;
+  }
+  const stringSet = new Set(
+    phrase
+      .toLowerCase()
+      .match(/[a-z]/g)
+  );
+
+  if (stringSet.size === 26 ) {
+    return true;
+  }
+
+  return false;
+} */
+
+// Second Solution
+
 function detectPangram(phrase) {
-  // write code here
+  return 'abcdefghijklmnopqrstuvwxyz'
+    .split('')
+    .every((elem) => phrase.toLowerCase().includes(elem));
 }
 
 module.exports = detectPangram;
