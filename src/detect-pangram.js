@@ -14,8 +14,14 @@
  *
  * @return {boolean}
  */
+
 function detectPangram(phrase) {
-  // write code here
+  const noSymbols = phrase.replace(/[ !_-]/g, '');
+  const pangram = `/(?=.*a)(?=.*b)(?=.*c)(?=.*d)(?=.*e)(?=.*f)(?=.*g)(?=.*h)
+  (?=.*i)(?=.*j)(?=.*k)(?=.*l)(?=.*m)(?=.*n)(?=.*o)(?=.*p)(?=.*q)(?=.*r)
+  (?=.*s)(?=.*t)(?=.*u)(?=.*v)(?=.*w)(?=.*x)(?=.*y)(?=.*z)./i`;
+
+  return pangram.test(noSymbols);
 }
 
 module.exports = detectPangram;
