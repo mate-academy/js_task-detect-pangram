@@ -15,20 +15,28 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const abc = 'abcdefghijklmnopqrstuvwxyz';
-  let res = true;
+  let isPangram = false;
 
-  if (phrase.length > 25) {
-    for (let i = 0; i < abc.length; i++) {
-      if (phrase.toLowerCase().includes(abc[i]) === false) {
-        res = false;
+  if (phrase.length < 25) {
+    isPangram = false;
+  } else {
+    const normalizeStr = phrase.toLowerCase().match(/[a-z]/g);
+    let resultStr = '';
+
+    for (let i = 0; i < normalizeStr.length; i++) {
+      if (resultStr.includes(normalizeStr[i]) === false) {
+        resultStr = resultStr + normalizeStr[i];
       }
     }
-  } else {
-    res = false;
+
+    if (resultStr.length > 25) {
+      isPangram = true;
+    } else {
+      isPangram = false;
+    }
   }
 
-  return res;
+  return isPangram;
 }
 
 module.exports = detectPangram;
