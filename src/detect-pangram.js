@@ -16,14 +16,19 @@
  */
 function detectPangram(phrase) {
   // write code here
-  if (phrase.length < 26) {
+  const numberOfLetters = 26;
+
+  if (phrase.length < numberOfLetters) {
     return false;
   }
 
+  const alfabet
+  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
   const phraseUpCase = phrase.toUpperCase();
 
-  for (let cartCode = 90; cartCode >= 65; cartCode--) {
-    if (!phraseUpCase.includes(String.fromCharCode(cartCode))) {
+  for (let i = 0; i < numberOfLetters; i++) {
+    if (!phraseUpCase.includes(alfabet[i])) {
       return false;
     };
   }
