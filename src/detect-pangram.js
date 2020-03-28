@@ -15,7 +15,16 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  
+  if(phrase == ''){
+    return false;
+  }
+  const checkedPhase = phrase.match(/([a-z])(?!.*\1)/gi);
+  if(checkedPhase.length === 26){
+    return true;
+  }
+
+  return false;
 }
 
 module.exports = detectPangram;
