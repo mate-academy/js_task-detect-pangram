@@ -15,7 +15,18 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const pangram = 'abcdefghijklnmnopqrsuvwxyz';
+
+  // eslint-disable-next-line no-param-reassign
+  phrase = phrase.toLowerCase();
+
+  for (const i of pangram) {
+    if (!phrase.includes(i)) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
