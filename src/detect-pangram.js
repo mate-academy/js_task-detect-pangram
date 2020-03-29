@@ -15,18 +15,15 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-
   const phraseToLower = phrase.toLowerCase();
+  let count = 0;
+  const allLetters = 'abcdefghijklmnopqrstuvwxyz';
 
   if (phrase.length === 0) {
     return false;
   }
 
-  const allLetters = 'abcdefghijklmnopqrstuvwxyz';
-  count = 0;
-  
   for (let i = 0; i < allLetters.length; i++) {
-
     if (phraseToLower.includes(allLetters[i])) {
       count++;
     }
