@@ -15,7 +15,19 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
-}
+  if (phrase === '') {
+    return false;
+  }
 
+  const normalizePhrase = phrase.toLowerCase().match(/[a-z]+/g).join('');
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+  for (const letter of alphabet) {
+    if (!normalizePhrase.includes(letter)) {
+      return false;
+    }
+  }
+
+  return true;
+}
 module.exports = detectPangram;
