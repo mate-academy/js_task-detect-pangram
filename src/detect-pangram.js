@@ -15,14 +15,17 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  if (/[\d,_-]/g.test(phrase) === true) {
-    return true;
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+  phrase = phrase.toLowerCase().replace(/\s/g);
+
+  for (let char of alphabet) {
+    if (phrase.indexOf(char) === -1) {
+      return false;
+    }
   }
-  else if (phrase.length === 0) {
-    return false;
-  }
-  phrase = phrase.toLowerCase().replace(/\s/g, "").split("");
-  return [...new Set(phrase)].length === phrase.length ? true : false;
+  
+  return true;
 }
 
 module.exports = detectPangram;
