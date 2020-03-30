@@ -16,9 +16,11 @@
  */
 function detectPangram(phrase) {
   const str = 'zxcvbnmasdfghjklqwertyuiop';
+  const regexp = /\s/g;
+  const lowercase = phrase.toLowerCase().replace(regexp, '');
 
   for (let i = 0; i < str.length; i++) {
-    if (!phrase.includes(str[i]) && !phrase.includes(str[i].toUpperCase())) {
+    if (lowercase.indexOf(str[i]) === -1) {
       return false;
     }
   }
