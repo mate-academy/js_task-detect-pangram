@@ -15,7 +15,19 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  if (phrase === '') {
+    return false;
+  }
+
+  const stringSearch = new Set();
+
+  for (let i = 0; i < phrase.length; i++) {
+    if (phrase[i].match(/[a-zA-Z]/)) {
+      stringSearch.add(phrase[i]);
+    }
+  }
+
+  return (stringSearch.size === 26);
 }
 
 module.exports = detectPangram;
