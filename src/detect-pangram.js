@@ -15,16 +15,18 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const phraseToLowercase = phrase.toLowerCase();
-  const aphabet = ('abcdefghijklmnopqrstuvwxyz');
+  const phraseToLowercase = phrase.replace(/[^A-Za-z]/g, '').toLowerCase();
+  const aphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-  for (let i = 0; i < aphabet.length; i++) {
-    if (phraseToLowercase.includes(aphabet.charAt(i))) {
-      continue;
-    } else {
+  if (phraseToLowercase === '' || phraseToLowercase.length < 26) {
+    return false;
+  }
+
+  aphabet.split('').forEach(element => {
+    if (!phraseToLowercase.includes(element)) {
       return false;
     }
-  }
+  });
 
   return true;
 }
