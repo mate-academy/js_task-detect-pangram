@@ -16,6 +16,8 @@
  */
 function detectPangram(phrase) {
   // write code here
-}
+  const regex = /([a-z])(?!.*\1)/gi;
 
+  return (phrase.match(regex) || []).length === 26;
+}
 module.exports = detectPangram;
