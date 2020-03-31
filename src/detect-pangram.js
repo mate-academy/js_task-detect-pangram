@@ -15,7 +15,11 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  return 'abcdefghijklmnopqrstuvwxyz'
+    .split('')
+    .every(item => phrase
+      .toLowerCase()
+      .includes(item));
 }
 
 module.exports = detectPangram;
