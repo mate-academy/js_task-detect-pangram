@@ -15,7 +15,12 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  let isPangram = false;
+  const set = new Set(phrase.toLowerCase().match(/[a-z]/g));
+
+  isPangram = Array.from(set).length === 26 && true;
+
+  return isPangram;
 }
 
 module.exports = detectPangram;
