@@ -15,7 +15,9 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const setOfAlpha = new Set(phrase.match(/[A-Z]/gi));
+
+  return setOfAlpha.size === 26;
 }
 
 module.exports = detectPangram;
