@@ -20,6 +20,7 @@ function detectPangram(phrase) {
   }
 
   const alphabet = {};
+  const numberOfLetters = 26;
   const letterArray = phrase.toLowerCase().match(/[a-z]/g);
 
   for (let i = 0; i < letterArray.length; i++) {
@@ -30,7 +31,7 @@ function detectPangram(phrase) {
     }
   }
 
-  if (Object.keys(alphabet).length === 26) {
+  if (Object.keys(alphabet).length === numberOfLetters) {
     return true;
   } else {
     return false;
