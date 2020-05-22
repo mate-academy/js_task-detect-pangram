@@ -31,11 +31,7 @@ function detectPangram(phrase) {
     }
   }
 
-  if (Object.keys(alphabet).length === numberOfLetters) {
-    return true;
-  } else {
-    return false;
-  }
+  return Object.keys(alphabet).length === numberOfLetters;
 }
 
 module.exports = detectPangram;
