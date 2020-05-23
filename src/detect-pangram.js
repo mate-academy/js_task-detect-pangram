@@ -15,7 +15,16 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const sentence = phrase.toLowerCase();
+  const pangram = 'abcdefghijklnmnopqrsuvwxyz';
+
+  for (const i of pangram) {
+    if (!sentence.includes(i)) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
