@@ -15,7 +15,20 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let i = 0;
+
+  while (i < alphabet.length) {
+    if (phrase.toLowerCase().includes(alphabet[i]) === false) {
+      return false;
+      // eslint-disable-next-line no-unreachable
+      break;
+    } else {
+      i++;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
