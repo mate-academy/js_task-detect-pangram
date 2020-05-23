@@ -15,7 +15,18 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
-}
+  if (phrase.length < 26) {
+    return false;
+  }
 
+  const isPanagram = phrase.match(/([a-z])(?!.*\1)/gi);
+  const length = isPanagram.length;
+
+  if (length === 26) {
+    return true;
+  } else {
+    return false;
+  }
+}
+detectPangram('How quickly daft juumping 34 zeeebras vex?');
 module.exports = detectPangram;
