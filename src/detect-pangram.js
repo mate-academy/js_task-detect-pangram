@@ -25,11 +25,7 @@ function detectPangram(phrase) {
     alphabet.delete(phrase[i].toUpperCase());
   }
 
-  if (alphabet.size === 0) {
-    return true;
-  }
-
-  return false;
+  return alphabet.size === 0;
 }
 
 module.exports = detectPangram;
