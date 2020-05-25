@@ -15,7 +15,7 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   const modifiedPhrase = phrase.toLowerCase();
   let counter = 0;
 
@@ -25,10 +25,6 @@ function detectPangram(phrase) {
     }
   }
 
-  if (counter === alphabet.length) {
-    return true;
-  } else {
-    return false;
-  }
+  return counter === alphabet.length;
 }
 module.exports = detectPangram;
