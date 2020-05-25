@@ -21,7 +21,9 @@ function detectPangram(phrase) {
     return false;
   }
 
-  return maxLetters === phrase.match(/([a-z])(?!.*\1)/gi).length;
+  const matches = phrase.match(/([a-z])(?!.*\1)/gi);
+
+  return maxLetters === matches.length;
 }
 detectPangram('How quickly daft juumping 34 zeeebras vex?');
 module.exports = detectPangram;
