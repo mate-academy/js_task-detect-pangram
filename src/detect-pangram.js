@@ -15,23 +15,15 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  if (phrase === '') {
-    return false;
-  }
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-  const alphabet = {};
-  const numberOfLetters = 26;
-  const letterArray = phrase.toLowerCase().match(/[a-z]/g);
-
-  for (let i = 0; i < letterArray.length; i++) {
-    if (alphabet.hasOwnProperty(letterArray[i])) {
-      alphabet[letterArray[i]] += 1;
-    } else {
-      alphabet[letterArray[i]] = 1;
+  for (let i = 0; i < alphabet.length; i++) {
+    if (phrase.toLowerCase().indexOf(alphabet[i]) === -1) {
+      return false;
     }
   }
 
-  return Object.keys(alphabet).length === numberOfLetters;
+  return true;
 }
 
 module.exports = detectPangram;
