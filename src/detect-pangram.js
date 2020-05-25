@@ -16,8 +16,9 @@
  */
 function detectPangram(phrase) {
   const string = phrase.toLowerCase();
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-  return 'abcdefghijklmnopqrstuvwxyz'.split('').every(function(x) {
+  return alphabet.split('').every(function(x) {
     return string.indexOf(x) !== -1;
   });
 }
