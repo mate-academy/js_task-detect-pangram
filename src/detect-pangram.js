@@ -16,15 +16,11 @@
  */
 function detectPangram(phrase) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  let i = 0;
+  const phraseUpperCase = phrase.toLowerCase();
 
-  while (i < alphabet.length) {
-    if (phrase.toLowerCase().includes(alphabet[i]) === false) {
+  for (let i = 0; i < alphabet.length; i++) {
+    if (phraseUpperCase.includes(alphabet[i]) === false) {
       return false;
-      // eslint-disable-next-line no-unreachable
-      break;
-    } else {
-      i++;
     }
   }
 
