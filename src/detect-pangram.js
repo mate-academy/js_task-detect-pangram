@@ -22,8 +22,8 @@ function detectPangram(phrase) {
     return false;
   }
 
-  for (let i = 0; i < lowerCaseAlphabet.length; i++) {
-    if (!lowerCasePhrase.includes(lowerCaseAlphabet[i])) {
+  for (const i of lowerCaseAlphabet) {
+    if (!lowerCasePhrase.includes(i)) {
       return false;
     }
   }
