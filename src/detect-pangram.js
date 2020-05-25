@@ -17,19 +17,14 @@
 function detectPangram(phrase) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   const lowerCasePhrase = phrase.toLowerCase();
-  let counter = 0;
 
   for (const letter of alphabet) {
-    if (lowerCasePhrase.includes(letter)) {
-      counter++;
+    if (lowerCasePhrase.includes(letter) === false) {
+      return false;
     }
   }
 
-  if (counter === alphabet.length) {
-    return true;
-  } else {
-    return false;
-  }
+  return true;
 }
 
 module.exports = detectPangram;
