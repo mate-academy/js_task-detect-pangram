@@ -16,11 +16,11 @@
  */
 function detectPangram(phrase) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-
+  const phraseLowerCase = phrase.toLowerCase();
   let count = 0;
 
   for (let i = 0; i < alphabet.length; i++) {
-    if (phrase.toLowerCase().includes(alphabet[i])) {
+    if (phraseLowerCase.includes(alphabet[i])) {
       count++;
     }
   }
