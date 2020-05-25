@@ -24,7 +24,7 @@ function detectPangram(phrase) {
     }
   }
 
-  return counter === 26;
+  return counter === alphabet.length;
 }
 
 module.exports = detectPangram;
