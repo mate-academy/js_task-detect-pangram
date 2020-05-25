@@ -15,25 +15,14 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  const lettersArr = phrase.toLowerCase().split('');
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  let count = 0;
+  const alternativePhrase = phrase.toLowerCase();
+  const set = new Set('abcdefghijklmnopqrstuvwxyz'.split(''));
 
-  if (phrase === '') {
-    return false;
+  for (let i = 0; i < alternativePhrase.length; i++) {
+    set.delete(alternativePhrase.charAt(i));
   }
 
-  for (let i = 0; i < alphabet.length; i++) {
-    if (lettersArr.includes(alphabet[i]) === true) {
-      count++;
-    }
-  }
-
-  if (count < 26) {
-    return false;
-  } else {
-    return true;
-  }
+  return set.size === 0;
 }
 
 module.exports = detectPangram;
