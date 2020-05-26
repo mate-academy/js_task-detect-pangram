@@ -16,8 +16,9 @@
  */
 function detectPangram(phrase) {
   const pangram = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const lowerCasePhrase = phrase.toLowerCase();
 
-  return pangram.every(x => phrase.toLowerCase().includes(x));
+  return pangram.every(x => lowerCasePhrase.includes(x));
 }
 
 module.exports = detectPangram;
