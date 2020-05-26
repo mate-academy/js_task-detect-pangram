@@ -17,21 +17,14 @@
 function detectPangram(phrase) {
   const lowerPhrase = phrase.toLowerCase();
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  let counter = 0;
 
   for (let i = 0; i < alphabet.length; i++) {
-    const panagram = alphabet[i];
-
-    if (lowerPhrase.indexOf(panagram) > -1) {
-      counter++;
+    if (lowerPhrase.indexOf(alphabet[i]) === -1) {
+      return false;
     }
   }
 
-  if (counter === 26) {
-    return true;
-  } else {
-    return false;
-  }
+  return true;
 }
 
 module.exports = detectPangram;
