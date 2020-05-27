@@ -17,9 +17,10 @@
 function detectPangram(phrase) {
   const alphabet = Array.from('abcdefghijklmnopqrstuvwxyz');
   let unmatchedChars = alphabet.length;
+  const phraseToCheck = phrase.toLowerCase();
 
   alphabet.forEach(char => {
-    if (phrase.toLowerCase().includes(char)) {
+    if (phraseToCheck.includes(char)) {
       unmatchedChars -= 1;
     }
   });
