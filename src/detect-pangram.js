@@ -14,8 +14,18 @@
  *
  * @return {boolean}
  */
+
 function detectPangram(phrase) {
-  // write code here
+  const upperPhrase = phrase.toUpperCase();
+  for (let i = 65; i <= 90; i++) {
+    const alfabetLetter = String.fromCharCode(i);
+    if (upperPhrase.includes(alfabetLetter)) {
+      continue;
+    } else {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = detectPangram;
