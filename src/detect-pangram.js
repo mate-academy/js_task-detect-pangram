@@ -15,7 +15,14 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  for (let i = 97; i <= 122; i++) {
+    const regex = new RegExp(String.fromCharCode(i), 'gi');
+
+    if (!regex.test(phrase)) {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = detectPangram;
