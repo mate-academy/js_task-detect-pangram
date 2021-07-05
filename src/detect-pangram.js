@@ -14,8 +14,29 @@
  *
  * @return {boolean}
  */
+
 function detectPangram(phrase) {
-  // write code here
+  let noSymbols = phrase.replace(/[ !_-]/g, '');
+
+  noSymbols = noSymbols.toLocaleLowerCase();
+
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const alphaArray = alphabet.split('');
+  const newStringArray = noSymbols.split('');
+
+  for (let i = 0; i < newStringArray.length; i++) {
+    for (let j = 0; j < alphaArray.length; j++) {
+      if (newStringArray[i] === alphaArray[j]) {
+        alphaArray.splice(j, 1);
+      }
+    }
+  }
+
+  if (alphaArray.length === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = detectPangram;
