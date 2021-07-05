@@ -14,8 +14,17 @@
  *
  * @return {boolean}
  */
+
 function detectPangram(phrase) {
-  // write code here
+  const set = new Set();
+
+  for (const letter of phrase) {
+    if (letter.match(/[A-Za-z]/)) {
+      set.add(letter.toLowerCase());
+    }
+  }
+
+  return set.size === 26;
 }
 
 module.exports = detectPangram;
