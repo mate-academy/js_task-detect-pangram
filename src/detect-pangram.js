@@ -15,7 +15,9 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const phraseFixed = phrase.replace(/[^a-zA-Z]/g, '').toLowerCase();
+  const phraseSorted = phraseFixed.replace(/(.)(?=.*\1)/g, '');
+  return phraseSorted.length === 26;
 }
 
 module.exports = detectPangram;
