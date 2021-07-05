@@ -15,7 +15,10 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const letters = phrase.toUpperCase().match(/[A-Z]/gi);
+  const newLetterSet = [...new Set(letters)];
+
+  return newLetterSet.length === 26;
 }
 
 module.exports = detectPangram;
