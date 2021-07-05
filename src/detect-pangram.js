@@ -15,7 +15,16 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const fixedPhrase = phrase.replace(/\W/g, '').replace(/\d/g, '');
+  let uniquedPhrase = '';
+
+  for (let i = 0; i < fixedPhrase.length; i++) {
+    if (fixedPhrase.indexOf(fixedPhrase[i]) === i) {
+      uniquedPhrase += fixedPhrase[i];
+    };
+  }
+
+  return uniquedPhrase.length === 26;
 }
 
 module.exports = detectPangram;
