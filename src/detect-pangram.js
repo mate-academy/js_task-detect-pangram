@@ -16,6 +16,16 @@
  */
 function detectPangram(phrase) {
   // write code here
+  const testPhrase = phrase.toLowerCase();
+  let uniqueLetters = '';
+
+  for (let i = 0; i < testPhrase.length; i++) {
+    if (testPhrase[i].match(/[a-z]/) && !uniqueLetters.match(testPhrase[i])) {
+      uniqueLetters += testPhrase[i];
+    }
+  }
+
+  return uniqueLetters.length === 26;
 }
 
 module.exports = detectPangram;
