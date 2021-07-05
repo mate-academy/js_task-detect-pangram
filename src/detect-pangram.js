@@ -14,8 +14,26 @@
  *
  * @return {boolean}
  */
+
 function detectPangram(phrase) {
-  // write code here
+  const alphabet = ['a', 'b', 'c', 'd', 'e', 'f',
+    'g', 'h', 'i', 'j', 'k', 'l',
+    'm', 'n', 'o', 'p', 'q', 'r',
+    's', 't', 'u', 'v', 'w', 'x',
+    'y', 'z'];
+  const lowerCasePhrase = phrase.toLowerCase();
+  for (let i = 0; i < lowerCasePhrase.length; i++) {
+    for (let a = 0; a < alphabet.length; a++) {
+      if (lowerCasePhrase[i] === alphabet[a]) {
+        alphabet.splice(a, 1);
+      }
+    }
+  };
+  if (alphabet.length === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = detectPangram;
