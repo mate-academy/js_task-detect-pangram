@@ -15,7 +15,7 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  return phrase.length > 25;
 }
 
 module.exports = detectPangram;
