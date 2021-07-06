@@ -15,7 +15,16 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const alphabet = 'qwertyuioplkjhgfdsazxcvbnm';
+
+  for (let i = 0; i < alphabet.length; i++) {
+    if (!phrase.includes(alphabet[i])
+    && !phrase.includes(alphabet[i].toUpperCase())) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
