@@ -15,7 +15,17 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  const str = 'zxcvbnmasdfghjklqwertyuiop';
+  const regexp = /\s/g;
+  const lowercase = phrase.toLowerCase().replace(regexp, '');
+
+  for (let i = 0; i < str.length; i++) {
+    if (lowercase.indexOf(str[i]) === -1) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
