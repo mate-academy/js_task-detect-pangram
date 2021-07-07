@@ -15,7 +15,15 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+  phrase.toLowerCase().split('').forEach((myChar) =>
+    alphabet.toLowerCase().split('').forEach((alphabetChar) =>
+      (myChar === alphabetChar)
+        ? (alphabet = alphabet.replace(alphabetChar, ''))
+        : "it's unique char"));
+
+  return alphabet.length === 0;
 }
 
 module.exports = detectPangram;
