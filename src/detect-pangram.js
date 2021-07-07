@@ -14,8 +14,23 @@
  *
  * @return {boolean}
  */
+
+const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
 function detectPangram(phrase) {
-  // write code here
+  if (phrase.length === 0) {
+    return false;
+  }
+
+  const checkedPhrase = phrase.toLowerCase();
+
+  for (let i = 0; i < alphabet.length; i++) {
+    if (!checkedPhrase.includes(alphabet[i])) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 module.exports = detectPangram;
