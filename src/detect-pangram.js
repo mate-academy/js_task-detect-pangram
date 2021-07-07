@@ -15,7 +15,28 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  let isPangram = false;
+
+  if (phrase.length < 25) {
+    isPangram = false;
+  } else {
+    const normalizeStr = phrase.toLowerCase().match(/[a-z]/g);
+    let resultStr = '';
+
+    for (let i = 0; i < normalizeStr.length; i++) {
+      if (resultStr.includes(normalizeStr[i]) === false) {
+        resultStr = resultStr + normalizeStr[i];
+      }
+    }
+
+    if (resultStr.length > 25) {
+      isPangram = true;
+    } else {
+      isPangram = false;
+    }
+  }
+
+  return isPangram;
 }
 
 module.exports = detectPangram;
