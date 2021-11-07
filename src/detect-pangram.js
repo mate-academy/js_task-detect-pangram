@@ -15,7 +15,7 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  return new Set(phrase.replace(/[^a-z]/gi, '')).size === 26;
 }
 
 module.exports = detectPangram;
